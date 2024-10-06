@@ -3,13 +3,15 @@ def maxProfit(prices):
     :type prices: List[int]
     :rtype: int
     """
-    profit = 0
-    for i in range(len(prices)):
-        for j in range(i + 1, len(prices)):
-            if prices[i] >= prices[j]:
-                break
-            profit = max(profit, (prices[j] - prices[i]))
+    if len(prices) == 0:
+        return 0
 
+    profit = 0
+    min = prices[0]
+    for i in range(1, len(prices)):
+        if prices[i] < min:
+            min = prices[i]
+        profit = max(profit, prices[i] - min)
     return profit
 
 

@@ -8,22 +8,40 @@ class Solution:
             "L": 50,
             "C": 100,
             "D": 500,
-            "M": 1000   
+            "M": 1000
         }
-        summit = 0
-        characters = list(s)
-        for i in range(0, len(characters)):
-            if value_set[characters[i]] >= value_set[characters[summit]]:
-                summit = i
+        for i in range(len(s) - 1):
+            if value_set[s[i]] < value_set[s[i + 1]]:
+                value -= value_set[s[i]]
+            else:
+                value += value_set[s[i]]
 
-        value += value_set[characters[summit]]
-        for i in range(summit-1, -1, -1):
-            value += value_set[i]
+        return value + value_set[s[-1]]
 
-        for i in range(summit+1, len(characters)):
-            value += value_set[characters[i]]
+    def romanToInt2(self, s: str) -> int:
+        value = 0
+        value_set = {
+            "I": 1,
+            "V": 5,
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000
+        }
+
+        s = s.replace("IV", "IIII")
+        s = s.replace("IX", "VIIII")
+        s = s.replace("XL", "XXXX")
+        s = s.replace("XC", "LXXXX")
+        s = s.replace("CD", "CCCC")
+        s = s.replace("CM", "DCCCC")
+
+        for i in range(len(s)):
+            value += value_set[s[i]]
+
         return value
 
 s = "MCMXCIV"
-
-print(Solution().romanToInt(s))
+# value from 1 - 3999
+print(Solution().romanToInt2(s))

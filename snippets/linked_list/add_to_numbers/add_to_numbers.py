@@ -1,8 +1,8 @@
 # Definition for singly-linked list.
 from typing import Optional
 
-from linked_list.linked_list_utils import ListNode, display
-from linked_list.linked_list_utils import list_to_linked_list
+from snippets.linked_list.linked_list_utils import ListNode, display
+from snippets.linked_list.linked_list_utils import list_to_linked_list
 
 
 class Solution:

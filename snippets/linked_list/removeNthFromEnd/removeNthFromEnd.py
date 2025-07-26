@@ -7,7 +7,7 @@ from typing import Optional
 
 from Tools.scripts.pep384_macrocheck import dprint
 
-from linked_list.linked_list_utils import ListNode, display, list_to_linked_list, length_recursive
+from snippets.linked_list.linked_list_utils import ListNode, display, list_to_linked_list
 
 
 class Solution:

@@ -22,4 +22,4 @@ class Solution:
 
 s = "3[a2[c]]" # abcabccdcdcdef
 res = Solution().decodeString(s)
-print(res)
+print(res)git

@@ -1,5 +1,5 @@
 from typing import Optional
-from utils import ListNode, build_linked_list, print_linked_list
+from utils.linked_list_utils import ListNode, build_linked_list, print_linked_list
 
 
 # Definition for singly-linked list.

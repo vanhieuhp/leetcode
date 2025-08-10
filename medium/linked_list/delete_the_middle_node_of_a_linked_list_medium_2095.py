@@ -1,6 +1,6 @@
 from typing import Optional
 
-from utils import ListNode, print_linked_list, build_linked_list
+from utils.linked_list_utils import ListNode, print_linked_list, build_linked_list
 
 
 class Solution:

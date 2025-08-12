@@ -1,3 +1,4 @@
+from collections import deque
 from typing import List, Optional
 
 
@@ -14,28 +15,27 @@ def build_binary_tree(arr):
     """
         builds a binary tree from a level-order array list
     """
-    if not arr:
+    if not arr or arr[0] is None:
         return None
 
-    nodes = []
-    for val in arr:
-        if val is not None:
-            node = TreeNode(val)
-        else:
-            node = None
+    root = TreeNode(arr[0])
+    queue = deque([root])
+    i = 1
 
-        nodes.append(node)
+    while queue and i < len(arr):
+        current = queue.popleft()
 
-    for i in range(len(arr)):
-        if nodes[i] is not None:
-            left_index = 2 * i + 1
-            right_index = 2 * i + 2
-            if left_index < len(arr):
-                nodes[i].left = nodes[left_index]
-            if right_index < len(arr):
-                nodes[i].right = nodes[right_index]
+        if i < len(arr) and arr[i] is not None:
+            current.left = TreeNode(arr[i])
+            queue.append(current.left)
+        i += 1
 
-    return nodes[0]
+        if i < len(arr) and arr[i] is not None:
+            current.right = TreeNode(arr[i])
+            queue.append(current.right)
+        i += 1
+
+    return root
 
 def print_tree(node, level=0, label="Root:"):
     """Prints the binary tree structure starting from a given node."""

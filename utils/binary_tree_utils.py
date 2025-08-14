@@ -37,6 +37,24 @@ def build_binary_tree(arr):
 
     return root
 
+def insert(root, val):
+    if root is None:
+        return TreeNode(val)
+    if val < root.val:
+        root.left = insert(root.left, val)
+    elif val > root.val:
+        root.right = insert(root.right, val)
+    return root
+
+def build_bst(values):
+    root = None
+    for v in values:
+        if v is None:
+            continue
+        root = insert(root, v)
+    return root
+
+
 def print_tree(node, level=0, label="Root:"):
     """Prints the binary tree structure starting from a given node."""
     if node is not None:

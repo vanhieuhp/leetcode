@@ -12,9 +12,6 @@ class Solution:
             
         return False
 
-    def isPowerOfFourBinary(self, n: int) -> bool:
-
-
 n = 0
 res = Solution().isPowerOfFour(n)
 print(res)

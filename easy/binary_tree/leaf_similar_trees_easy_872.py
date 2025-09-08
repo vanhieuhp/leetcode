@@ -1,4 +1,4 @@
-from utils.binary_tree_utils import build_binary_tree, print_tree, TreeNode
+from utils.binary_tree_utils import build_binary_tree, TreeNode
 from typing import Optional
 
 

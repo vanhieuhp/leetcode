@@ -1,4 +1,4 @@
-s = "2300. Successful Pairs of Spells and Potions"
+s = "1268. Search Suggestions System"
 splits = s.split(". ")
 level = ["easy", "medium", "hard"]
 

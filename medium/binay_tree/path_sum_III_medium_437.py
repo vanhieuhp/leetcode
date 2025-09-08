@@ -1,4 +1,4 @@
-from collections import deque, defaultdict
+from collections import defaultdict
 
 from utils.binary_tree_utils import TreeNode
 from utils.binary_tree_utils import build_binary_tree
